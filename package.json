@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "arpad": "^1.0.2",
+    "com.izaakschroeder.trueskill": "^0.0.2",
     "dotenv": "^5.0.0",
     "glicko2": "^0.8.4",
     "lodash": "^4.17.10",
