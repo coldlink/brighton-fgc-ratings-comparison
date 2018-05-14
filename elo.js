@@ -63,7 +63,10 @@ const doElo = async () => {
 
   players = _(players).orderBy(['elo'], ['desc']).value()
 
-  console.log(JSON.stringify(players))
+  // console.log(JSON.stringify(players))
+
+  console.log(elo.expectedScore(_.find(players, player => player.handle === 'ChemicalX').elo, _.find(players, player => player.handle === 'Kubisa').elo))
+
   return process.exit(0)
 }
 

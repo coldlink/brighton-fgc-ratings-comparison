@@ -7,12 +7,8 @@ const mongo = require('./mongo')
 const getScore = (scores, player) => {
   const total = scores[0].p1 + scores[0].p2
   let wins
-  if (player === 'p1') {
-    wins = scores[0].p1
-  } else {
-    wins = scores[0].p2
-  }
 
+  wins = scores[0].p1
   if (total === 0) {
     return 0.5
   }
@@ -23,8 +19,6 @@ const doTrueSkill = async () => {
   let { matches, players } = await mongo()
 
   players = _(players).map(player => _.merge({}, player, { rating: trueSkill.createRating() })).value()
-
-  console.log(players)
 
   matches.forEach(match => {
     const player1Id = match._player1Id.toString()
@@ -46,7 +40,11 @@ const doTrueSkill = async () => {
   })
 
   players = _(players).orderBy(['rating.mu'], ['desc']).value()
-  console.log(JSON.stringify(players))
+  // console.log(JSON.stringify(players))
+
+  // kubisa vs dillips
+  console.log(trueSkill.winChances([[_.find(players, player => player.handle === 'Daniel_Dillips').rating], [_.find(players, player => player.handle === 'Kubisa').rating]]))
+
   return process.exit(0)
 }
 

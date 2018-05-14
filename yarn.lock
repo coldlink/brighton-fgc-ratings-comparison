@@ -462,6 +462,10 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
+free-gaussian@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/free-gaussian/-/free-gaussian-0.1.0.tgz#b5152abe0dbdddf36080ded0b4d4ba6f8ace17fc"
+
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
@@ -1112,6 +1116,12 @@ tmp@^0.0.33:
 to-mongodb-core@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/to-mongodb-core/-/to-mongodb-core-2.0.0.tgz#3596ec7613ac9ad3b98a89dcb9aefba569cd27eb"
+
+"trueskill@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/trueskill/-/trueskill-0.0.2.tgz#f6c7ef634c2debac0d57ffbb5d4c8f26eb4eda75"
+  dependencies:
+    free-gaussian "0.1.0"
 
 type-check@~0.3.2:
   version "0.3.2"
