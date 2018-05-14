@@ -9,7 +9,8 @@ module.exports = async () => {
     // 5a42a35a44520034dbd1108f - sfv
     tournaments = await new Promise((resolve, reject) => {
       db.tournaments.find({
-        _gameId: mongojs.ObjectId('5a42a35a44520034dbd1108f')
+        _gameId: mongojs.ObjectId('5a42a35a44520034dbd1108f'),
+        dateEnd: { $type: 9 }
       }, { _id: true }, (err, tournaments) => {
         if (err) return reject(err)
         return resolve(tournaments.map(tournament => tournament._id))
@@ -43,6 +44,9 @@ module.exports = async () => {
       db.players.find({
         _id: {
           $in: playerIds
+        },
+        challongeUsername: {
+          $exists: true
         }
       }, { _id: true, handle: true }, (err, players) => {
         if (err) return reject(err)
